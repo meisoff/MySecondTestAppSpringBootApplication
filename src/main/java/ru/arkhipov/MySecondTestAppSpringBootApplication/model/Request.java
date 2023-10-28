@@ -1,4 +1,5 @@
 package ru.arkhipov.MySecondTestAppSpringBootApplication.model;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,7 +24,7 @@ public class Request {
     @Size(max = 32, message = "operatiounUid must be up to 32 characters")
     private String operatiounUid;
 
-    private String systemName;
+    private Systems systemName;
 
     @NotBlank(message = "systemTime is required and must not be blank")
     private String systemTime;
@@ -37,4 +38,20 @@ public class Request {
     private int templateId;
     private int productCode;
     private int smsCode;
+
+    @Override
+    public String toString() {
+        return "{" +
+                "uid='" + uid + '\'' +
+                ", opertionUid='" + operatiounUid + '\'' +
+                ", systemName='" + systemName + '\'' +
+                ", systemTime='" + systemTime + '\'' +
+                ", source='" + source + '\'' +
+                ", communicationId=" + communicationId +
+                ", templateId=" + templateId +
+                ", productCode=" + productCode +
+                ", smsCode=" + smsCode +
+                '}';
+    }
 }
+
